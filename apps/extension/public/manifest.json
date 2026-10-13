@@ -1,0 +1,22 @@
+﻿{
+  "manifest_version": 3,
+  "name": "NNEP Browser Automation Bridge",
+  "version": "1.0.0",
+  "description": "Secure bridge between Web Portal and target social media platforms.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "dist/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "js": ["dist/bridge.js"],
+      "run_at": "document_start"
+    }
+  ]
+}

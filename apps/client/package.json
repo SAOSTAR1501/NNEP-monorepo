@@ -1,0 +1,30 @@
+﻿{
+  "name": "@nnep/client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start --port 3001",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^3.8.0",
+    "@emotion/react": "^11.14.0",
+    "@tanstack/react-query": "^5.66.0",
+    "@nnep/contracts": "workspace:*",
+    "lucide-react": "^1.16.0",
+    "next": "16.1.6",
+    "next-themes": "^0.4.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@nnep/typescript-config": "workspace:*",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.8.0"
+  }
+}

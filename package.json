@@ -1,0 +1,36 @@
+﻿{
+  "name": "nnep-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Enterprise Fullstack Monorepo with Next.js 16 + NestJS 11 Fastify + Chrome Extension MV3 + PostgreSQL 17",
+  "author": "ViTech Group",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@10.33.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:api": "pnpm --filter @nnep/api dev",
+    "dev:client": "pnpm --filter @nnep/client dev",
+    "dev:admin": "pnpm --filter @nnep/admin dev",
+    "dev:ext": "pnpm --filter @nnep/extension dev",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json,yaml,yml}\"",
+    "db:generate": "pnpm --filter @nnep/api prisma:generate",
+    "db:migrate": "pnpm --filter @nnep/api prisma:migrate",
+    "db:seed": "pnpm --filter @nnep/api prisma:seed",
+    "ext:zip:dev": "pnpm --filter @nnep/extension build:zip:dev",
+    "ext:zip:prod": "pnpm --filter @nnep/extension build:zip:prod",
+    "infra:up": "docker compose -f infrastructure/compose.yaml up -d",
+    "infra:down": "docker compose -f infrastructure/compose.yaml down"
+  },
+  "devDependencies": {
+    "@nnep/eslint-config": "workspace:*",
+    "@nnep/typescript-config": "workspace:*",
+    "prettier": "^3.5.0",
+    "turbo": "^2.4.0"
+  }
+}
